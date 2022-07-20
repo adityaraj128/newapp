@@ -1,8 +1,9 @@
 import hotBg from "./images/hot.jpg";
-//import stormyBg from "./assets/stormy.jpg";
+import stormyBg from "./images/stormy.jpg";
 import vhotBg from "./images/vhot.jpg";
 import normalBg from "./images/normal.jpg";
 import coldBg from "./images/cold.jpg";
+import coolBg from "./images/cool.jpg";
 import Descriptions from "./components/Descriptions";
 import { useEffect, useState } from "react";
 import { getFormattedWeatherData } from "./weatherService";
@@ -20,14 +21,18 @@ function App() {
 
       // dynamic background
       //const strongwinds = units === "metric" ? 25 : 30;
-      const cold = units === "metric" ? 20 : 60; 
-      const normal = units === "metric" ? 60: 85;
-      const veryhot= units==="metric" ? 115: 150;
+      const cold = units === "metric" ? 10: 50;
+      const cool = units === "metric" ? 11: 52
+      const normal = units === "metric" ? 20: 68;
+      const hot = units === "metric" ? 35: 95;
+      const veryhot= units==="metric" ? 45: 113;
       if (data.temp <= cold) setBg(coldBg);
-      //else if (data.speed<=strongwinds) setBg(stormyBg);
-      else if (data.temp<=normal) setBg(normalBg);
-      else if (data.temp<=veryhot) setBg(vhotBg);
-      else setBg(hotBg);
+      if (data.temp<= cool) setBg(coolBg);
+      else if (data.temp<normal) setBg(cool);
+      else if (data.temp<hot) setBg(normalBg);
+      else if (data.temp<veryhot) setBg(hotBg);
+      else if (data.temp>=veryhot) setBg(vhotBg);
+      else setBg(stormyBg);
     };
 
     fetchWeatherData();
