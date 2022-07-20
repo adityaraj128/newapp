@@ -52,7 +52,7 @@
 }
 
 .section__inputs>input {
-  border: 0.8px solid white;
+  border: 0.8px solid black;
   border-radius: 0.4rem;
   background-color: transparent;
   color: darkblue;
@@ -67,7 +67,7 @@
 
 .section__inputs>button {
   padding: 10px 50px;
-  border: none;
+  border: 0.8px solid black;
   border-radius: 00.4rem;
   font-size: 20px;
   font-weight: 500;
