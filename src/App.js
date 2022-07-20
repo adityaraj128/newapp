@@ -28,7 +28,7 @@ function App() {
       const veryhot= units==="metric" ? 45: 113;
       if (data.temp <= cold) setBg(coldBg);
       if (data.temp<= cool) setBg(coolBg);
-      else if (data.temp<normal) setBg(cool);
+      else if (data.temp<normal) setBg(coolBg);
       else if (data.temp<hot) setBg(normalBg);
       else if (data.temp<veryhot) setBg(hotBg);
       else if (data.temp>=veryhot) setBg(vhotBg);
